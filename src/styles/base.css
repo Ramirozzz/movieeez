@@ -1,0 +1,17 @@
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-dark);
+    /* background-image: url("../assets/images/Noise.png");
+    background-repeat: repeat; */
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+  }
+
+  a {
+    font-weight: bold;
+  }
+}

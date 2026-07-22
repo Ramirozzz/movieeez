@@ -1,0 +1,11 @@
+@theme {
+  /* Fonts */
+  --font-primary: "Azonix", sans-serif;
+  --font-secondary: "Manrope", sans-serif;
+
+  /* Color palette */
+  --color-bg-dark: #111827;
+  --color-font: oklch(98.5% 0 0);
+  --color-muted: #94a3b8;
+  --color-accent: #53bcc4;
+}
