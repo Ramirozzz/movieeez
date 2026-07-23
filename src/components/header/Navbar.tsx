@@ -7,11 +7,11 @@ import { VscColorMode } from "react-icons/vsc";
 const Navbar = () => {
   return (
     <nav className="fixed top-0 z-50 w-full">
-      <div className="relative flex items-center justify-between py-6 px-6">
+      <div className="relative flex items-center justify-between py-6 px-16">
         {/* Logo */}
         <div className="flex items-center gap-1">
           <Link
-            className=" text-xl lg:text-2xl uppercase text-font font-primary font-bold"
+            className=" text-xl lg:text-2xl uppercase text-font font-primary "
             to="/"
           >
             Moviez
@@ -23,7 +23,7 @@ const Navbar = () => {
         </div>
 
         {/* Center Links */}
-        <ul className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-9 text-base">
+        <ul className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-12 text-base">
           {NAV_LINKS.map((link) => (
             <li key={link.to}>
               <NavLink
@@ -31,7 +31,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-font font-semibold"
-                    : "text-muted hover:text-font transition-all duration-300"
+                    : "text-muted/80 hover:text-font transition-all duration-300"
                 }
               >
                 {link.label}
