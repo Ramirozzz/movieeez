@@ -11,7 +11,53 @@
     font-family: var(--font-secondary);
   }
 
-  a {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-primary);
+  }
+
+  h1 {
+    font-size: clamp(2.9rem, 6vw, 4.5rem);
     font-weight: bold;
+    line-height: 1.1;
+
+    /* background: linear-gradient(
+      90deg,
+      var(--color-font) 0%,
+      var(--color-accent) 70%,
+      var(--color-accent) 150%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent; */
+  }
+
+  /* h2 {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+    font-weight: bold;
+    letter-spacing: 1px;
+   
+  } */
+
+  p {
+    font-size: clamp(1rem, 0.7rem + 0.4vw, 1.1rem);
+    color: var(--color-muted);
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  button {
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 36px;
+    cursor: pointer;
   }
 }

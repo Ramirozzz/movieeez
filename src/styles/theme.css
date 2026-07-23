@@ -6,6 +6,26 @@
   /* Color palette */
   --color-bg-dark: #111827;
   --color-font: oklch(98.5% 0 0);
-  --color-muted: #94a3b8;
+  --color-muted: #d8e4f3;
   --color-accent: #53bcc4;
+  --color-white: #ffffff;
+  --color-font-dark: #111111;
+
+  /* Hero image overlay */ /* Gradients */
+  --img-overlay:
+    radial-gradient(
+      circle at center,
+      rgba(17, 24, 39, 0.1) 0%,
+      rgba(17, 24, 39, 0.25) 60%,
+      rgba(17, 24, 39, 0.9) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(17, 24, 39, 0.85) 0%,
+      rgba(17, 24, 39, 0.5) 45%,
+      rgba(17, 24, 39, 0.5) 60%,
+      rgba(17, 24, 39, 0.9) 100%
+    );
+
+  --fade-color: linear-gradient(to bottom, transparent, #111827);
 }
