@@ -3,6 +3,8 @@ import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import "./App.css";
 
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 function App() {
   return (
     <>
@@ -11,6 +13,7 @@ function App() {
           <Route index element={<HomePage />} />
         </Route>
       </Routes>
+      <ReactQueryDevtools />
     </>
   );
 }
