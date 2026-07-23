@@ -7,7 +7,7 @@ import { VscColorMode } from "react-icons/vsc";
 const Navbar = () => {
   return (
     <nav className="fixed top-0 z-50 w-full">
-      <div className="relative flex items-center justify-between py-6 px-16">
+      <div className="relative flex items-center justify-between  py-6 px-4 md:px-8 lg:px-16">
         {/* Logo */}
         <div className="flex items-center gap-1">
           <Link
@@ -49,12 +49,12 @@ const Navbar = () => {
             }
           >
             <FiSearch
-              size={25}
+              size={26}
               className="hover:text-accent transition-all duration-300"
             />
           </NavLink>
 
-          <VscColorMode className="text-accent cursor-pointer" size={25} />
+          <VscColorMode className="text-accent cursor-pointer" size={26} />
         </div>
       </div>
     </nav>
