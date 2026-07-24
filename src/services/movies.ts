@@ -12,6 +12,17 @@ export const getAllMovies = async () => {
   return res.data;
 };
 
+// Get trending movies
+export const getTrendingMovies = async () => {
+  const res = await api.get<MoviesResponse>("/trending/movie/week", {
+    params: {
+      region: "US",
+      include_adult: false,
+    },
+  });
+  return res.data;
+};
+
 // Get now playing movies
 export const getNowPlayingMovies = async () => {
   const res = await api.get<MoviesResponse>("/movie/now_playing", {
@@ -27,6 +38,30 @@ export const getNowPlayingMovies = async () => {
 
 export const getPopularMovies = async () => {
   const res = await api.get<MoviesResponse>("/movie/popular", {
+    params: {
+      region: "US",
+      include_adult: false,
+    },
+  });
+
+  return res.data;
+};
+
+// Get Top rated movies
+export const getTopRatedMovies = async () => {
+  const res = await api.get<MoviesResponse>("/movie/top_rated", {
+    params: {
+      region: "US",
+      include_adult: false,
+    },
+  });
+
+  return res.data;
+};
+
+// Get Upcoming movies
+export const getUpcomingMovies = async () => {
+  const res = await api.get<MoviesResponse>("/movie/upcoming", {
     params: {
       region: "US",
       include_adult: false,

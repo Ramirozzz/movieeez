@@ -16,13 +16,13 @@ interface MovieSliderProps {
 
 const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
   return (
-    <div className="mb-14">
+    <div className="mb-12">
       <h2 className="mb-4">{title}</h2>
       <Swiper
         modules={[Navigation, FreeMode]}
         spaceBetween={15}
         navigation
-        speed={700}
+        speed={800}
         grabCursor={true}
         freeMode={true}
         className="mySwiper"
@@ -39,8 +39,8 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
           },
           1024: {
             // Desktop
-            slidesPerView: 6.5,
-            slidesPerGroup: 6,
+            slidesPerView: 7.5,
+            slidesPerGroup: 7,
           },
         }}
       >
@@ -48,7 +48,7 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
           <SwiperSlide key={movie.id}>
             <div className="w-full cursor-pointer">
               <img
-                className="h-auto w-full rounded-lg object-cover"
+                className="h-auto w-full rounded-xl object-cover"
                 src={
                   movie.poster_path
                     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
