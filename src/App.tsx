@@ -4,10 +4,12 @@ import HomePage from "./pages/HomePage";
 import "./App.css";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import GlobalFetching from "./components/Loading/GlobalFetching";
 
 function App() {
   return (
     <>
+      <GlobalFetching />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
