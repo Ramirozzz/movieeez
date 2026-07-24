@@ -39,25 +39,27 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
           },
           1024: {
             // Desktop
-            slidesPerView: 7.5,
-            slidesPerGroup: 7,
+            slidesPerView: 6.5,
+            slidesPerGroup: 6,
           },
         }}
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
-            <div className="w-full cursor-pointer">
-              <img
-                className="h-auto w-full rounded-xl object-cover"
-                src={
-                  movie.poster_path
-                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                    : "/images/movie-placeholder.png"
-                }
-                alt={movie.title}
-                loading="lazy"
-              />
-            </div>
+            <Link to={`/movie/${movie.id}`}>
+              <div className="w-full cursor-pointer">
+                <img
+                  className="h-auto w-full rounded-xl object-cover"
+                  src={
+                    movie.poster_path
+                      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                      : "/images/movie-placeholder.png"
+                  }
+                  alt={movie.title}
+                  loading="lazy"
+                />
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

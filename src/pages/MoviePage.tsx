@@ -3,6 +3,7 @@ import { useMovie } from "../hooks/useMovie";
 import QueryWrapper from "../components/Loading/QueryWrapper";
 import MovieDetails from "../components/movies/MovieDetails";
 import MovieSlider from "../components/movies/MovieSlider";
+import ActorSlider from "../components/actors/ActorSlider";
 
 const MoviePage = () => {
   const { id } = useParams();
@@ -15,6 +16,8 @@ const MoviePage = () => {
     error: movieError,
   } = useMovie(movieId);
 
+  if (!movie) return null;
+
   return (
     <QueryWrapper
       isLoading={isMovieLoading}
@@ -25,9 +28,9 @@ const MoviePage = () => {
         <section>
           <MovieDetails movie={movie} />
           <div className=" pl-4 lg:pl-14 pb-15">
-            {/* <div className="relative pb-4">
-              <ActorsSlider title="Cast" actors={movie.credits.cast} />
-            </div> */}
+            <div className="relative py-4">
+              <ActorSlider title="Movie Cast" actors={movie.credits.cast} />
+            </div>
             {/* <div className="relative py-4 mt-5">
               <MovieSlider
                 title="Related movies"

@@ -18,7 +18,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
   const posterUrl = `https://image.tmdb.org/t/p/w780${movie.poster_path}`;
 
   return (
-    <section className="relative lg:min-h-screen bg-cover bg-center flex flex-col justify-center">
+    <section className="relative min-h-130 lg:min-h-160 bg-cover bg-center flex flex-col justify-center">
       <picture className="absolute inset-0">
         <source media="(min-width: 768px)" srcSet={backdropUrl} />
 
@@ -32,7 +32,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
       <div className="hero-overlay absolute inset-0" />
       <div className="relative z-10 mt-20 lg:mt-30 py-10">
         <div className="space-y-4 lg:space-y-6 w-full max-w-4xl px-4 lg:px-16">
-          <h1 className="lg:text-6xl">{movie.title}</h1>
+          <h1>{movie.title}</h1>
 
           <div className="flex flex-wrap items-center gap-6 text-muted">
             <div className="text-yellow-400 ">
