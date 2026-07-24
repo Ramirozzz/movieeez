@@ -9,17 +9,13 @@ const Navbar = () => {
     <nav className="fixed top-0 z-50 w-full">
       <div className="relative flex items-center justify-between  py-6 px-4 md:px-8 lg:px-16">
         {/* Logo */}
-        <div className="flex items-center gap-1">
-          <Link
-            className=" text-xl lg:text-2xl uppercase text-font font-primary "
-            to="/"
-          >
-            Moviez
-          </Link>
-
-          <div className="text-accent">
+        <div className="flex items-center gap-2">
+          <div className="text-accent ">
             <FaPlay size={20} />
           </div>
+          <Link className=" text-xl lg:text-xl text-font font-primary " to="/">
+            Movieeez
+          </Link>
         </div>
 
         {/* Center Links */}
