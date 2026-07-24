@@ -16,9 +16,22 @@ export const getAllMovies = async () => {
 export const getNowPlayingMovies = async () => {
   const res = await api.get<MoviesResponse>("/movie/now_playing", {
     params: {
-      region: "SE",
+      region: "US",
       include_adult: false,
     },
   });
+  return res.data;
+};
+
+// Get popular movies
+
+export const getPopularMovies = async () => {
+  const res = await api.get<MoviesResponse>("/movie/popular", {
+    params: {
+      region: "US",
+      include_adult: false,
+    },
+  });
+
   return res.data;
 };
