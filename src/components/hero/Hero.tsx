@@ -8,17 +8,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ movies }) => {
-  // const { data: movies, isLoading, error, isError } = useAllMovies();
   const [random] = useState(() => Math.floor(Math.random() * 1000));
-
-  // if (isLoading) {
-  //   return <p>Loading..</p>;
-  // }
-
-  // if (isError) {
-  //   return <p>Something went wrong: {error.message}</p>;
-  // }
-  // if (!movies) return null;
 
   // Only movies that have a backdrop
   const moviesWithBackdrop = movies.results.filter(
