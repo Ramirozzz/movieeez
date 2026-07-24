@@ -1,5 +1,5 @@
 import { api } from "./tmdbApi";
-import type { MoviesResponse } from "../types/tmdbApi.types";
+import type { Movie, MoviesResponse } from "../types/tmdbApi.types";
 
 // Get all movies
 export const getAllMovies = async () => {
@@ -65,6 +65,18 @@ export const getUpcomingMovies = async () => {
     params: {
       region: "US",
       include_adult: false,
+    },
+  });
+
+  return res.data;
+};
+
+//Get movie by id
+
+export const getMovie = async (id: number) => {
+  const res = await api.get<Movie>(`/movie/${id}`, {
+    params: {
+      append_to_response: "credits",
     },
   });
 
