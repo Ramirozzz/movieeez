@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import placeholder from "../../assets/images/placeholder.jpg";
 import { FreeMode } from "swiper/modules";
 import { Navigation } from "swiper/modules";
 import type { MovieCard } from "../../types/tmdbApi.types";
@@ -49,11 +50,11 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
             <Link to={`/movie/${movie.id}`}>
               <div className="w-full cursor-pointer">
                 <img
-                  className="h-auto w-full rounded-xl object-cover"
+                  className="aspect-[2/3] overflow-hidden rounded-xl object-cover bg-zinc-800"
                   src={
                     movie.poster_path
                       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                      : "/images/movie-placeholder.png"
+                      : placeholder
                   }
                   alt={movie.title}
                   loading="lazy"
