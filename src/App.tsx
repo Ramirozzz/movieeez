@@ -6,6 +6,7 @@ import ActorDetailsPage from "./pages/ActorDetailsPage";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import GlobalFetching from "./components/Loading/GlobalFetching";
 import "./App.css";
+import MoviesByGenrePage from "./pages/MoviesByGenrePage";
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/movie/:id" element={<MoviePage />} />
           <Route path="/actor/:id" element={<ActorDetailsPage />} />
+          <Route path="/movies" element={<MoviesByGenrePage />} />
+          <Route
+            path="/movies/genre/:genreId"
+            element={<MoviesByGenrePage />}
+          />
         </Route>
       </Routes>
       <ReactQueryDevtools />
