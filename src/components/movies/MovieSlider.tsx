@@ -17,7 +17,7 @@ interface MovieSliderProps {
 
 const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
   return (
-    <div className="mb-12">
+    <div className="mb-8">
       <h2 className="mb-4">{title}</h2>
       <Swiper
         modules={[Navigation, FreeMode]}
@@ -30,7 +30,7 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
         breakpoints={{
           320: {
             // Mobile
-            slidesPerView: 3.3,
+            slidesPerView: 3.5,
             slidesPerGroup: 3,
           },
           640: {
