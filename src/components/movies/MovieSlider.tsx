@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
+import type { MovieCard } from "../../types/tmdbApi.types";
+import type React from "react";
+import placeholder from "../../assets/images/placeholder.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
-import placeholder from "../../assets/images/placeholder.jpg";
 import { FreeMode } from "swiper/modules";
 import { Navigation } from "swiper/modules";
-import type { MovieCard } from "../../types/tmdbApi.types";
-import type React from "react";
 import "../movies/movieSlider.css";
 
 interface MovieSliderProps {
