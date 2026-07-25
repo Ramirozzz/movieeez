@@ -53,7 +53,7 @@ const ActorSlider: React.FC<ActorSliderProps> = ({ title, actors }) => {
                   />
                 ) : (
                   <div className="flex items-center justify-center aspect-[2/3] overflow-hidden rounded-lg bg-zinc-800">
-                    <IoPerson size={120} />
+                    <IoPerson size={120} color="#a8a8a8" />
                   </div>
                 )}
               </div>
