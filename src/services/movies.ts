@@ -1,17 +1,19 @@
 import { api } from "./tmdbApi";
-import {
-  type ActorMoviesResponse,
-  type ActorDetails,
-  type Movie,
-  type MoviesResponse,
-  type GenresResponse,
+import type {
+  ActorMoviesResponse,
+  ActorDetails,
+  Movie,
+  MoviesResponse,
+  GenresResponse,
+  TrendingTime,
 } from "../types/tmdbApi.types";
 
 // Get all movies
-export const getAllMovies = async () => {
+export const getAllMovies = async (page = 1) => {
   const res = await api.get<MoviesResponse>("/discover/movie", {
     params: {
-      region: "SE",
+      region: "US",
+      page,
       include_adult: false,
     },
   });
@@ -19,8 +21,8 @@ export const getAllMovies = async () => {
 };
 
 // Get trending movies
-export const getTrendingMovies = async () => {
-  const res = await api.get<MoviesResponse>("/trending/movie/week", {
+export const getTrendingMovies = async (time: TrendingTime) => {
+  const res = await api.get<MoviesResponse>(`/trending/movie/${time}`, {
     params: {
       region: "US",
       include_adult: false,
