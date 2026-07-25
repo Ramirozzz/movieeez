@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface QueryWrapperProps {
   isLoading: boolean;
@@ -13,12 +14,7 @@ const QueryWrapper = ({
   error,
   children,
 }: QueryWrapperProps) => {
-  if (isLoading)
-    return (
-      <p className="text-lg flex justify-center items-center h-screen">
-        LOADING...
-      </p>
-    );
+  if (isLoading) return <LoadingSpinner />;
 
   if (isError) {
     return <p>Something went wrong: {error?.message}</p>;

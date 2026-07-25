@@ -1,5 +1,4 @@
 import { useIsFetching } from "@tanstack/react-query";
-
 import LoadingSpinner from "./LoadingSpinner";
 
 const GlobalFetching = () => {
