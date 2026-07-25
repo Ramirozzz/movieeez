@@ -1,5 +1,9 @@
 import { api } from "./tmdbApi";
-import type { Movie, MoviesResponse } from "../types/tmdbApi.types";
+import type {
+  ActorDetails,
+  Movie,
+  MoviesResponse,
+} from "../types/tmdbApi.types";
 
 // Get all movies
 export const getAllMovies = async () => {
@@ -77,6 +81,26 @@ export const getMovie = async (id: number) => {
   const res = await api.get<Movie>(`/movie/${id}`, {
     params: {
       append_to_response: "credits",
+    },
+  });
+
+  return res.data;
+};
+
+// Get actor details
+
+export const getActorDetails = async (id: number) => {
+  const res = await api.get<ActorDetails>(`/person/${id}`);
+
+  return res.data;
+};
+
+// Get related movies
+
+export const getRelatedMovies = async (id: number) => {
+  const res = await api.get<MoviesResponse>(`/movie/${id}/similar`, {
+    params: {
+      include_adult: false,
     },
   });
 
