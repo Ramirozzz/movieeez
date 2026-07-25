@@ -1,77 +1,35 @@
 import Hero from "../components/hero/Hero";
 import MovieSlider from "../components/movies/MovieSlider";
-import { useNowplaying } from "../hooks/useNowPlaying";
-import { usePopularMovies } from "../hooks/usePopularMovies";
 import QueryWrapper from "../components/Loading/QueryWrapper";
-import { useAllMovies } from "../hooks/useAllMovies";
-import { useTopRatedMovies } from "../hooks/useTopRated";
-import { useUpcomingMovies } from "../hooks/useUpcoming";
-import { useTrending } from "../hooks/useTrending";
+import { useSearchParams } from "react-router-dom";
+import type { TrendingTime } from "../types/tmdbApi.types";
+import TrendingSlider from "../components/movies/TrendingSlider";
+import { useHomeMovies } from "../hooks/useHomeMovies";
 
 const HomePage = () => {
-  const {
-    data: allMovies,
-    isLoading: isLoadingAllMovies,
-    isError: isErrorAllMovies,
-    error: errorAllMovies,
-  } = useAllMovies();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const time = (searchParams.get("time") as TrendingTime) || "day";
+
+  const trendingTitle =
+    time === "day" ? "Trending today" : "Trending this week";
+
+  const setTime = (value: TrendingTime) => {
+    setSearchParams({
+      time: value,
+    });
+  };
 
   const {
-    data: trendingMovies,
-    isLoading: isLoadingTrendingMovies,
-    isError: isErrorTrendingMovies,
-    error: errorTrendingMovies,
-  } = useTrending();
-
-  const {
-    data: nowPlayingMovies,
-    isLoading: isLoadingNowPlaying,
-    isError: isErrorNowPlaying,
-    error: errorNowPlaying,
-  } = useNowplaying();
-
-  const {
-    data: popularMovies,
-    isLoading: isLoadingPopular,
-    isError: isErrorPopular,
-    error: errorPopular,
-  } = usePopularMovies();
-
-  const {
-    data: topRatedMovies,
-    isLoading: isLoadingTopRatedMovies,
-    isError: isErrorTopRatedMovies,
-    error: errorTopRatedMovies,
-  } = useTopRatedMovies();
-
-  const {
-    data: upcomingMovies,
-    isLoading: isLoadingUpcomingMovies,
-    isError: isErrorUpcomingMovies,
-    error: errorUpcomingMovies,
-  } = useUpcomingMovies();
-
-  const isLoading =
-    isLoadingAllMovies ||
-    isLoadingTrendingMovies ||
-    isLoadingNowPlaying ||
-    isLoadingPopular ||
-    isLoadingTopRatedMovies ||
-    isLoadingUpcomingMovies;
-  const isError =
-    isErrorAllMovies ||
-    isErrorTrendingMovies ||
-    isErrorNowPlaying ||
-    isErrorPopular ||
-    isErrorTopRatedMovies ||
-    isErrorUpcomingMovies;
-  const error =
-    errorAllMovies ||
-    errorTrendingMovies ||
-    errorNowPlaying ||
-    errorPopular ||
-    errorTopRatedMovies ||
-    errorUpcomingMovies;
+    trendingMovies,
+    allMovies,
+    nowPlayingMovies,
+    popularMovies,
+    topRatedMovies,
+    upcomingMovies,
+    isLoading,
+    isError,
+    error,
+  } = useHomeMovies(time);
 
   return (
     <QueryWrapper isLoading={isLoading} isError={isError} error={error}>
@@ -85,17 +43,25 @@ const HomePage = () => {
             <Hero movies={allMovies} />
 
             <div className="mt-8 pl-4 lg:pl-16">
-              <MovieSlider title="Trending" movies={trendingMovies.results} />
               <MovieSlider
                 title="Now Playing"
                 movies={nowPlayingMovies.results}
               />
 
+              <TrendingSlider
+                title={trendingTitle}
+                movies={trendingMovies.results}
+                time={time}
+                onSwitch={setTime}
+              />
+
               <MovieSlider title="Top Rated" movies={topRatedMovies.results} />
+
               <MovieSlider
                 title="Most Popular"
                 movies={popularMovies.results}
               />
+
               <MovieSlider title="Upcoming" movies={upcomingMovies.results} />
             </div>
           </>
