@@ -1,8 +1,10 @@
 import { api } from "./tmdbApi";
-import type {
-  ActorDetails,
-  Movie,
-  MoviesResponse,
+import {
+  type ActorMoviesResponse,
+  type ActorDetails,
+  type Movie,
+  type MoviesResponse,
+  type GenresResponse,
 } from "../types/tmdbApi.types";
 
 // Get all movies
@@ -100,6 +102,48 @@ export const getActorDetails = async (id: number) => {
 export const getRelatedMovies = async (id: number) => {
   const res = await api.get<MoviesResponse>(`/movie/${id}/similar`, {
     params: {
+      include_adult: false,
+    },
+  });
+
+  return res.data;
+};
+
+// Get actor movies
+
+export const getActorMovies = async (id: number) => {
+  const res = await api.get<ActorMoviesResponse>(
+    `/person/${id}/movie_credits`,
+    {
+      params: {
+        include_adult: false,
+      },
+    },
+  );
+
+  return res.data;
+};
+
+// Get genres
+
+export const getGenres = async () => {
+  const res = await api.get<GenresResponse>("/genre/movie/list", {
+    params: {
+      region: "US",
+    },
+  });
+
+  return res.data;
+};
+
+// Get movies by genre
+
+export const getmoviesByGenre = async (genreId: number, page = 1) => {
+  const res = await api.get<MoviesResponse>("/discover/movie", {
+    params: {
+      region: "US",
+      with_genres: genreId,
+      page,
       include_adult: false,
     },
   });
