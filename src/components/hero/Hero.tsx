@@ -43,11 +43,11 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
       <div className="hero-overlay absolute inset-0" />
 
       <div className="relative z-10 flex h-full flex-col justify-center lg:pt-15">
-        <h1 className="mb-6 max-w-sm md:max-w-3xl">{randomMovie.title}</h1>
+        <h1 className="mb-6 max-w-sm md:max-w-2xl">{randomMovie.title}</h1>
 
         <p className="mb-10 max-w-sm md:max-w-xl ">
-          {(randomMovie.overview ?? "").length > 100
-            ? randomMovie.overview!.substring(0, 100) + "..."
+          {(randomMovie.overview ?? "").length > 130
+            ? randomMovie.overview!.substring(0, 130) + "..."
             : randomMovie.overview}
         </p>
 
