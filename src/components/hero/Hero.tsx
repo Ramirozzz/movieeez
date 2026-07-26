@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
   if (!randomMovie) return null;
 
   return (
-    <section className="relative h-screen max-h-screen overflow-hidden px-4 md:px-8 lg:px-16">
+    <section className="relative h-[650px] max-h-screen overflow-hidden px-4 md:px-8 lg:px-16">
       {/* Background image */}
       <picture className="absolute inset-0">
         <source media="(min-width: 768px)" srcSet={backdropUrl} />

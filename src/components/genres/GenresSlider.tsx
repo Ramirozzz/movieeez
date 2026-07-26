@@ -46,7 +46,7 @@ const GenresSlider: React.FC<GenresSliderProps> = ({
         <SwiperSlide>
           <Link to="/movies">
             <div
-              className={`w-full h-10 flex items-center justify-center text-sm border rounded-full ${
+              className={`w-full h-11 flex items-center justify-center text-sm border rounded-full ${
                 selectedGenreId === null
                   ? " text-font-dark font-semibold bg-accent  "
                   : "text-muted border-white/20 hover:border-accent transition-all duration-300"
