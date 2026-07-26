@@ -75,8 +75,8 @@ const TrendingSlider: React.FC<MoviesSliderProps> = ({
           },
           1024: {
             // Desktop
-            slidesPerView: 6.5,
-            slidesPerGroup: 6,
+            slidesPerView: 5.5,
+            slidesPerGroup: 5,
           },
         }}
       >
