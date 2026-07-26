@@ -152,3 +152,17 @@ export const getmoviesByGenre = async (genreId: number, page = 1) => {
 
   return res.data;
 };
+
+// Search movies
+
+export const searchMovies = async (query: string, page = 1) => {
+  const res = await api.get<MoviesResponse>("/search/movie", {
+    params: {
+      query,
+      page,
+      include_adult: false,
+    },
+  });
+
+  return res.data;
+};
