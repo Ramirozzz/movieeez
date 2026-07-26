@@ -57,8 +57,8 @@ const MoviesByGenrePage = () => {
     <QueryWrapper isLoading={isLoading} isError={isError} error={error}>
       {genres && genreMovies && (
         <section className="section">
-          <h2 className=" flex items-center gap-2 md:text-2xl text-muted text-start pl-16 mt-40 ">
-            Movies <IoIosArrowForward />{" "}
+          <h2 className=" flex items-center gap-2 md:text-2xl text-muted text-start pl-4 md:pl-8 lg:pl-16 mt-40 ">
+            Movies <IoIosArrowForward />
             <span className=" text-font font-bold">{genreName}</span>
           </h2>
 
