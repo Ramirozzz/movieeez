@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 import { NAV_LINKS } from "../../constants/navLinks";
-// import { MdHome } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
 import { VscColorMode } from "react-icons/vsc";
@@ -10,13 +9,13 @@ const Navbar = () => {
     <nav className="fixed top-0 z-30 w-full">
       <div className="relative flex items-center justify-between py-6 px-4 md:px-8 lg:px-16">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="text-accent ">
-            <FaPlay size={21} />
-          </div>
-          <Link className=" text-xl lg:text-xl text-font font-primary " to="/">
+        <div className="flex items-center gap-1">
+          <Link className=" text-xl lg:text-3xl text-font font-primary " to="/">
             Movieeez
           </Link>
+          <div className="text-accent pb-0.5">
+            <FaPlay size={20} />
+          </div>
         </div>
 
         <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 text-base lg:flex">
@@ -35,7 +34,7 @@ const Navbar = () => {
                     }`
                   }
                 >
-                  <Icon size={20} />
+                  <Icon size={23} />
                   <span>{link.label}</span>
                 </NavLink>
               </li>
