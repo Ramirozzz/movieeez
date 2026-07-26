@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
   if (!randomMovie) return null;
 
   return (
-    <section className="relative h-[630px] max-h-screen overflow-hidden px-4 md:px-8 lg:px-16">
+    <section className="relative h-screen max-h-screen overflow-hidden px-4 md:px-8 lg:px-16">
       {/* Background image */}
       <picture className="absolute inset-0">
         <source media="(min-width: 768px)" srcSet={backdropUrl} />
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
       <div className="hero-overlay absolute inset-0" />
 
       <div className="relative z-10 flex h-full flex-col justify-center lg:pt-15">
-        <h1 className="mb-6 max-w-sm md:max-w-4xl">{randomMovie.title}</h1>
+        <h1 className="mb-6 max-w-sm md:max-w-3xl">{randomMovie.title}</h1>
 
         <p className="mb-10 max-w-sm md:max-w-xl ">
           {(randomMovie.overview ?? "").length > 100
