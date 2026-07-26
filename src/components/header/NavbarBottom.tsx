@@ -1,67 +1,41 @@
 import { NavLink } from "react-router-dom";
-import { MdHome } from "react-icons/md";
-import { IoIosPlay } from "react-icons/io";
+// import { MdHome } from "react-icons/md";
+// import { IoIosPlay } from "react-icons/io";
+import { NAV_LINKS } from "../../constants/navLinks";
 import { FiSearch } from "react-icons/fi";
 
 const NavbarBottom = () => {
   return (
-    <nav className=" fixed bottom-0 z-10 w-full bg-bg-dark lg:hidden">
-      <div className="flex justify-around items-center pt-3 pb-4 border-t border-white/10">
-        <NavLink
-          to={"/"}
-          className={({ isActive }) =>
-            isActive ? "text-font font-bold" : "text-muted"
-          }
-        >
-          <div className="flex flex-col items-center gap-1 cursor-pointer group pt-[2px]">
-            <div>
-              <MdHome size={21} />
-            </div>
-            <div className="text-xs tracking-[0.03em]">Home</div>
-          </div>
-        </NavLink>
+    <nav className=" fixed bottom-0 z-30 w-full bg-bg-dark border-t border-white/10 lg:hidden">
+      <div className="flex items-center justify-around px-2 py-3">
+        {NAV_LINKS.map((link) => {
+          const Icon = link.icon;
 
-        <NavLink
-          to={"movies"}
-          className={({ isActive }) =>
-            isActive ? "text-font font-bold" : "text-muted"
-          }
-        >
-          <div className="flex flex-col items-center gap-1 cursor-pointer group">
-            <div>
-              <IoIosPlay size={23} />
-            </div>
-            <div className="text-xs tracking-[0.03em]">Movies</div>
+          return (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `flex flex-col items-center gap-1 ${
+                  isActive
+                    ? "font-bold text-accent"
+                    : "text-muted hover:text-font"
+                }`
+              }
+            >
+              <Icon size={19} />
+              <span className="text-xs tracking-[0.03em] mt-1">
+                {link.label}
+              </span>
+            </NavLink>
+          );
+        })}
+        <div className="flex flex-col items-center gap-1 cursor-pointer group">
+          <div>
+            <FiSearch size={20} color="#ffffffa4" />
           </div>
-        </NavLink>
-
-        <NavLink
-          to={"trending"}
-          className={({ isActive }) =>
-            isActive ? "text-font font-bold" : "text-muted"
-          }
-        >
-          <div className="flex flex-col items-center gap-1 cursor-pointer group">
-            <div>
-              <IoIosPlay size={23} />
-            </div>
-            <div className="text-xs tracking-[0.03em] text-muted">Trending</div>
-          </div>
-        </NavLink>
-
-        <NavLink
-          to={"search"}
-          className={({ isActive }) =>
-            isActive ? "text-font font-bold" : "text-muted"
-          }
-        >
-          <div className="flex flex-col items-center gap-1 cursor-pointer group">
-            <div>
-              <FiSearch size={23} />
-            </div>
-            <div className="text-xs tracking-[0.03em]">Search</div>
-          </div>
-        </NavLink>
+          <div className="text-xs text-muted tracking-[0.03em]">Search</div>
+        </div>
       </div>
     </nav>
   );
