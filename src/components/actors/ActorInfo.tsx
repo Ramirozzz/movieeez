@@ -14,7 +14,7 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
 
   return (
     <section className="flex flex-col lg:flex-row items-start lg:items-center justify-center gap-8 lg:gap-16 p-4 md:p-8 lg:p-13">
-      <div className="relative w-sm hidden lg:block">
+      <div className="relative hidden lg:block">
         <img
           className="w-full h-auto rounded-xl object-cover "
           src={
@@ -32,7 +32,7 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
         <div className="leading-relaxed">
           <div className="inline-flex items-center gap-1.5 mb-3 px-2.5 py-1 rounded-md border border-accent/30 bg-accent/10">
             <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="text-xs  uppercase text-accent">Actor</span>
+            <span className="text-xs uppercase text-accent">Actor</span>
           </div>
           <div className="flex justify-start items-center gap-8 md:gap-8 py-4">
             <div className="block lg:hidden w-28 h-28">
@@ -43,7 +43,7 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
               />
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-normal">
+            <h1 className="text-4xl md:text-7xl font-normal">
               {actorDetails.name}
             </h1>
           </div>
