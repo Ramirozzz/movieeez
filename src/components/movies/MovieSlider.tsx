@@ -40,8 +40,8 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
           },
           1024: {
             // Desktop
-            slidesPerView: 6.5,
-            slidesPerGroup: 6,
+            slidesPerView: 7.5,
+            slidesPerGroup: 7,
           },
         }}
       >
