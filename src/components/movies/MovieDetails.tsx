@@ -30,8 +30,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
       </picture>
       {/* Overlay */}
       <div className="hero-overlay absolute inset-0" />
-      <div className="relative z-10 mt-20 lg:mt-30 py-10">
-        <div className="space-y-4 lg:space-y-6 w-full max-w-4xl px-4 lg:px-16">
+      <div className="relative z-10 lg:mt-30 py-10">
+        <div className="space-y-4 lg:space-y-3 w-full max-w-4xl px-4 lg:px-16">
           <h1>{movie.title}</h1>
 
           <div className="flex flex-wrap items-center gap-6 text-muted">
@@ -52,7 +52,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
             </div>
           </div>
 
-          <p className="mb-10 leading-relaxed">{movie.overview}</p>
+          <p className="mb-10 mt-8 leading-relaxed">{movie.overview}</p>
 
           <PlayButton />
         </div>
