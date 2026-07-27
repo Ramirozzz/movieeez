@@ -1,10 +1,12 @@
-import { HiHome, HiFilm, HiHeart } from "react-icons/hi";
+import { HiFilm } from "react-icons/hi";
+import { MdHome } from "react-icons/md";
+import { TbCopyPlus } from "react-icons/tb";
 
 export const NAV_LINKS = [
   {
     label: "Home",
     to: "/",
-    icon: HiHome,
+    icon: MdHome,
   },
   {
     label: "Movies",
@@ -14,11 +16,6 @@ export const NAV_LINKS = [
   {
     label: "Watchlist",
     to: "/watchlist",
-    icon: HiHeart,
+    icon: TbCopyPlus,
   },
-  // {
-  //   label: "Profile",
-  //   to: "/profile",
-  //   icon: HiUser,
-  // },
 ];

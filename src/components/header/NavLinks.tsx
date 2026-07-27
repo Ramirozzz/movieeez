@@ -19,7 +19,7 @@ const NavLinks = () => {
                 }`
               }
             >
-              <Icon size={23} />
+              <Icon size={25} />
               <span>{link.label}</span>
             </NavLink>
           </li>
