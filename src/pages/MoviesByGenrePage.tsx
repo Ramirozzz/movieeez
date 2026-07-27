@@ -64,8 +64,7 @@ const MoviesByGenrePage = () => {
 
           <GenresSlider genres={genres} selectedGenreId={selectedGenreId} />
           <div className="px-4 md:px-8 lg:px-16">
-            {/* <h2 className="text-lg mt-6">{genreName}</h2> */}
-            <MovieList genreMovies={genreMovies.results} />
+            <MovieList movies={genreMovies.results} />
           </div>
 
           <MoviesPagination
