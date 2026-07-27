@@ -14,7 +14,10 @@ const Navbar = () => {
       <div className="relative flex items-center justify-between py-6 px-4 md:px-8 lg:px-16">
         {/* Logo */}
         <div className="flex items-center gap-1">
-          <Link className=" text-xl lg:text-3xl text-font font-primary " to="/">
+          <Link
+            className=" text-2xl lg:text-3xl text-font font-primary "
+            to="/"
+          >
             Movieeez
           </Link>
           <div className="text-accent pb-0.5">
