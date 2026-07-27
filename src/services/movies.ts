@@ -84,7 +84,7 @@ export const getUpcomingMovies = async () => {
 export const getMovie = async (id: number) => {
   const res = await api.get<Movie>(`/movie/${id}`, {
     params: {
-      append_to_response: "credits",
+      append_to_response: "credits,videos",
     },
   });
 
@@ -166,3 +166,13 @@ export const searchMovies = async (query: string, page = 1) => {
 
   return res.data;
 };
+
+//Get movie Videos/ trailer
+
+// export const getMovieVideos = async (movieId: number) => {
+//   const res = await api.get<MovieVideosResponse>(`/movie/${movieId}?append_to_response=videos`, {
+//     params: {
+//       language: "en-US",
+//     },
+//   });
+// };
