@@ -83,9 +83,9 @@ const TrendingSlider: React.FC<MoviesSliderProps> = ({
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Link to={`/movie/${movie.id}`}>
-              <div className="w-full cursor-pointer">
+              <div className="group overflow-hidden w-full rounded-xl cursor-pointer">
                 <img
-                  className="aspect-[2/3] overflow-hidden rounded-xl object-cover bg-zinc-800"
+                  className="aspect-[2/3] object-cover bg-zinc-800 poster-hover"
                   src={
                     movie.poster_path
                       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
