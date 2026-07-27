@@ -3,8 +3,9 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ThemeProvider from "./contexts/ThemeProvider.tsx";
-import "./index.css";
+import WatchlistProvider from "./contexts/WatchListProvider.tsx";
 import App from "./App.tsx";
+import "./index.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,7 +22,9 @@ createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ThemeProvider>
-          <App />
+          <WatchlistProvider>
+            <App />
+          </WatchlistProvider>
         </ThemeProvider>
       </BrowserRouter>
     </QueryClientProvider>
