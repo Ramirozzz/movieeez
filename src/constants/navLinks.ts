@@ -12,8 +12,8 @@ export const NAV_LINKS = [
     icon: HiFilm,
   },
   {
-    label: "My List",
-    to: "/favorites",
+    label: "Watchlist",
+    to: "/watchlist",
     icon: HiHeart,
   },
   // {
