@@ -1,11 +1,18 @@
 import { FaPlay } from "react-icons/fa";
 
-const PlayButton = () => {
+interface PlayButtonProps {
+  onClick: () => void;
+}
+
+const PlayButton: React.FC<PlayButtonProps> = ({ onClick }) => {
   return (
-    <button className="group flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-font-dark transition-all duration-300 hover:bg-white/90 ">
+    <button
+      onClick={onClick}
+      className="group flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-font-dark transition-all duration-300 hover:bg-white/90"
+    >
       <FaPlay className="text-font-dark" size={20} />
 
-      <span className="text-sm ">Play Trailor</span>
+      <span className="text-sm">Play Trailer</span>
     </button>
   );
 };
