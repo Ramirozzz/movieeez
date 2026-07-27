@@ -50,6 +50,7 @@ const ActorSlider: React.FC<ActorSliderProps> = ({ title, actors }) => {
                     className="aspect-[2/3] overflow-hidden rounded-lg object-cover "
                     src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
                     alt={actor.name}
+                    loading="lazy"
                   />
                 ) : (
                   <div className="flex items-center justify-center aspect-[2/3] overflow-hidden rounded-lg bg-zinc-800">
