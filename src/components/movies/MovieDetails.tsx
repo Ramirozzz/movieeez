@@ -1,12 +1,15 @@
-import type React from "react";
+import { useState } from "react";
 import type { Movie } from "../../types/tmdbApi.types";
 import PlayButton from "../buttons/PlayButton";
+import TrailerModal from "../trailerModal/TrailerModal";
 
 interface MovieDetailsProps {
   movie: Movie;
 }
 
 const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
+  const [isTrailerOpen, setIsTrailerOpen] = useState(false);
+
   //Convert relaease date to year
   const getYear = (date: string | null) => {
     if (!date) return "N/A";
@@ -16,6 +19,15 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
   // Image URL
   const backdropUrl = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
   const posterUrl = `https://image.tmdb.org/t/p/w780${movie.poster_path}`;
+
+  const trailer =
+    movie.videos?.results.find(
+      (video) =>
+        video.site === "YouTube" && video.type === "Trailer" && video.official,
+    ) ??
+    movie.videos?.results.find(
+      (video) => video.site === "YouTube" && video.type === "Trailer",
+    );
 
   return (
     <section className="relative min-h-130 lg:min-h-160 bg-cover bg-center flex flex-col justify-center">
@@ -54,9 +66,17 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
 
           <p className="mb-10 mt-8 leading-relaxed">{movie.overview}</p>
 
-          <PlayButton />
+          {trailer && <PlayButton onClick={() => setIsTrailerOpen(true)} />}
         </div>
       </div>
+
+      {isTrailerOpen && trailer && (
+        <TrailerModal
+          trailerKey={trailer.key}
+          onClose={() => setIsTrailerOpen(false)}
+        />
+      )}
+
       {/* Bottom fade */}
       <div className="fade-bottom" />
     </section>
