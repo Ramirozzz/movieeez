@@ -1,10 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
-import { NAV_LINKS } from "../../constants/navLinks";
 import { FiSearch } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
-import { VscColorMode } from "react-icons/vsc";
+import { IoInvertModeOutline } from "react-icons/io5";
+import { IoInvertMode } from "react-icons/io5";
+import { useTheme } from "../../hooks/useTheme";
+import NavLinks from "./NavLinks";
 
 const Navbar = () => {
+  const { dark, changeTheme } = useTheme();
+
   return (
     <nav className="fixed top-0 z-30 w-full">
       <div className="relative flex items-center justify-between py-6 px-4 md:px-8 lg:px-16">
@@ -17,31 +21,8 @@ const Navbar = () => {
             <FaPlay size={20} />
           </div>
         </div>
-
-        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 text-base lg:flex">
-          {NAV_LINKS.map((link) => {
-            const Icon = link.icon;
-
-            return (
-              <li key={link.to}>
-                <NavLink
-                  to={link.to}
-                  className={({ isActive }) =>
-                    `flex items-center gap-2 text-sm transition-all duration-300 ${
-                      isActive
-                        ? "text-font font-semibold bg-white/16 px-4 py-2.5 rounded-full"
-                        : "text-muted/80 hover:text-font"
-                    }`
-                  }
-                >
-                  <Icon size={23} />
-                  <span>{link.label}</span>
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
-
+        {/* Navbar links*/}
+        <NavLinks />
         <div className="flex gap-4 md:gap-5">
           <NavLink
             to="/search"
@@ -55,7 +36,23 @@ const Navbar = () => {
             />
           </NavLink>
 
-          <VscColorMode className="text-accent cursor-pointer" size={26} />
+          {dark ? (
+            <IoInvertMode
+              className="text-accent cursor-pointer"
+              size={26}
+              onClick={() => {
+                changeTheme();
+              }}
+            />
+          ) : (
+            <IoInvertModeOutline
+              className="text-accent cursor-pointer"
+              size={26}
+              onClick={() => {
+                changeTheme();
+              }}
+            />
+          )}
         </div>
       </div>
     </nav>
