@@ -2,6 +2,8 @@ import { useState } from "react";
 import type { Movie } from "../../types/tmdbApi.types";
 import PlayButton from "../buttons/PlayButton";
 import TrailerModal from "../trailerModal/TrailerModal";
+import { useWatchlist } from "../../hooks/useWatchList";
+import AddToWatchlist from "../buttons/AddToWatchlist";
 
 interface MovieDetailsProps {
   movie: Movie;
@@ -9,6 +11,8 @@ interface MovieDetailsProps {
 
 const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
+
+  const { watchlist } = useWatchlist();
 
   //Convert relaease date to year
   const getYear = (date: string | null) => {
@@ -29,8 +33,9 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
       (video) => video.site === "YouTube" && video.type === "Trailer",
     );
 
+  console.log(watchlist);
   return (
-    <section className="relative min-h-130 lg:min-h-160 bg-cover bg-center flex flex-col justify-center">
+    <section className="relative min-h-130 lg:min-h-170 bg-cover bg-center flex flex-col justify-center">
       <picture className="absolute inset-0">
         <source media="(min-width: 768px)" srcSet={backdropUrl} />
 
@@ -42,11 +47,11 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
       </picture>
       {/* Overlay */}
       <div className="hero-overlay absolute inset-0" />
-      <div className="relative z-10 lg:mt-30 py-10">
-        <div className="space-y-4 lg:space-y-3 w-full max-w-4xl px-4 lg:px-16">
+      <div className="relative z-10 mt-30 py-10">
+        <div className="space-y-2 lg:space-y-3 w-full max-w-4xl px-4 lg:px-16">
           <h1>{movie.title}</h1>
 
-          <div className="flex flex-wrap items-center gap-6 text-muted">
+          <div className="flex flex-wrap items-center gap-2 md:gap-6 text-sm md:text-base text-muted">
             <div className="text-yellow-400 ">
               ⭐ {movie.vote_average.toFixed(1)}
             </div>
@@ -65,8 +70,10 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
           </div>
 
           <p className="mb-10 mt-8 leading-relaxed">{movie.overview}</p>
-
-          {trailer && <PlayButton onClick={() => setIsTrailerOpen(true)} />}
+          <div className="flex items-center gap-6">
+            {trailer && <PlayButton onClick={() => setIsTrailerOpen(true)} />}
+            <AddToWatchlist movie={movie} />
+          </div>
         </div>
       </div>
 

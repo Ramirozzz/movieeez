@@ -1,0 +1,6 @@
+.poster-hover {
+  @apply transition-all duration-500 ease-out
+           group-hover:scale-105
+           group-hover:brightness-110
+           group-hover:contrast-105;
+}

@@ -11,6 +11,7 @@ import SearchPage from "./pages/SearchPage";
 import { useTheme } from "./hooks/useTheme";
 
 import "./App.css";
+import WatchlistPage from "./pages/WatchlistPage";
 
 function App() {
   const { dark } = useTheme();
@@ -34,6 +35,7 @@ function App() {
             element={<MoviesByGenrePage />}
           />
           <Route path="/Search" element={<SearchPage />} />
+          <Route path="/watchlist" element={<WatchlistPage />} />
         </Route>
       </Routes>
       {/* <ReactQueryDevtools /> */}

@@ -9,7 +9,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
   return (
     <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-x-2 md:gap-x-4 gap-y-4 md:gap-y-8 mt-10">
       {movies.map((movie) => (
-        <div key={movie.id} className="fade-in">
+        <div key={movie.id} className="group overflow-hidden w-full rounded-xl">
           <Link to={`/movie/${movie.id}`}>
             <img
               src={
@@ -18,7 +18,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
                   : placeholder
               }
               alt={movie.title}
-              className="rounded-lg cursor-pointer"
+              className="poster-hover"
             />
           </Link>
         </div>
