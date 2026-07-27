@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../buttons/Button";
 import type { MoviesResponse } from "../../types/tmdbApi.types";
+import MoreInfo from "../buttons/MoreInfo";
+import AddToWatchlist from "../buttons/AddToWatchlist";
 
 interface HeroProps {
   movies: MoviesResponse;
@@ -27,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
   if (!randomMovie) return null;
 
   return (
-    <section className="relative h-[650px] max-h-screen overflow-hidden px-4 md:px-8 lg:px-16">
+    <section className="relative h-screen max-h-screen overflow-hidden px-4 md:px-8 lg:px-16">
       {/* Background image */}
       <picture className="absolute inset-0">
         <source media="(min-width: 768px)" srcSet={backdropUrl} />
@@ -46,15 +47,16 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
         <h1 className="mb-6 max-w-sm md:max-w-2xl">{randomMovie.title}</h1>
 
         <p className="mb-10 max-w-sm md:max-w-xl ">
-          {(randomMovie.overview ?? "").length > 130
-            ? randomMovie.overview!.substring(0, 130) + "..."
+          {(randomMovie.overview ?? "").length > 120
+            ? randomMovie.overview!.substring(0, 120) + "..."
             : randomMovie.overview}
         </p>
 
         <div className="flex gap-5">
           <Link to={`/movie/${randomMovie.id}`}>
-            <Button />
+            <MoreInfo />
           </Link>
+          <AddToWatchlist movie={randomMovie} />
         </div>
       </div>
 
