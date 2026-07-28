@@ -19,7 +19,7 @@ const ActorSlider: React.FC<ActorSliderProps> = ({ title, actors }) => {
       <h2 className="mb-4">{title}</h2>
       <Swiper
         modules={[Navigation, FreeMode]}
-        spaceBetween={8}
+        spaceBetween={10}
         navigation
         speed={800}
         grabCursor={true}
