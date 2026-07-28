@@ -26,7 +26,7 @@ const TrendingSlider: React.FC<MoviesSliderProps> = ({
   onSwitch,
 }) => {
   return (
-    <div className="mb-8">
+    <div className="mb-4 md:mb-8">
       <div className="flex items-center gap-4 mb-4">
         <h2>{title}</h2>
         <div className="w-fit border border-white/20 rounded-md ">
@@ -56,7 +56,7 @@ const TrendingSlider: React.FC<MoviesSliderProps> = ({
 
       <Swiper
         modules={[Navigation, FreeMode]}
-        spaceBetween={15}
+        spaceBetween={12}
         navigation
         speed={800}
         grabCursor={true}
@@ -83,7 +83,7 @@ const TrendingSlider: React.FC<MoviesSliderProps> = ({
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Link to={`/movie/${movie.id}`}>
-              <div className="group overflow-hidden w-full rounded-xl cursor-pointer">
+              <div className="group overflow-hidden w-full rounded-lg cursor-pointer">
                 <img
                   className="aspect-[2/3] object-cover bg-zinc-800 poster-hover"
                   src={

@@ -11,7 +11,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
       {movies.map((movie) => (
         <div
           key={movie.id}
-          className="group relative overflow-hidden w-full rounded-xl fade-in"
+          className="group relative overflow-hidden w-full rounded-lg fade-in"
         >
           <Link to={`/movie/${movie.id}`}>
             <img

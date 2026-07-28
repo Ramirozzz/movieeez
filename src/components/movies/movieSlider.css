@@ -1,8 +1,8 @@
 /* Slider styling */
 .genres-swiper .swiper-button-next,
 .genres-swiper .swiper-button-prev {
-  width: 25px;
-  height: 25px;
+  width: 25px !important;
+  height: 25px !important;
   top: 30px !important;
 }
 
@@ -14,7 +14,7 @@
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: var(--color-sec);
+  color: var(--color-accent);
 }
 
 .swiper-button-disabled {

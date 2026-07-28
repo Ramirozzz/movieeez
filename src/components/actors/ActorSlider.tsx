@@ -19,7 +19,7 @@ const ActorSlider: React.FC<ActorSliderProps> = ({ title, actors }) => {
       <h2 className="mb-4">{title}</h2>
       <Swiper
         modules={[Navigation, FreeMode]}
-        spaceBetween={10}
+        spaceBetween={12}
         navigation
         speed={800}
         grabCursor={true}
@@ -47,13 +47,13 @@ const ActorSlider: React.FC<ActorSliderProps> = ({ title, actors }) => {
               <div className="mb-2">
                 {actor.profile_path ? (
                   <img
-                    className="aspect-[2/3] overflow-hidden rounded-xl object-cover hover:brightness-115 transition-all duration-500 ease-out "
+                    className="aspect-[2/3] overflow-hidden rounded-lg object-cover hover:brightness-115 transition-all duration-500 ease-out "
                     src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
                     alt={actor.name}
                     loading="lazy"
                   />
                 ) : (
-                  <div className="flex items-center justify-center aspect-[2/3] overflow-hidden rounded-xl bg-zinc-800">
+                  <div className="flex items-center justify-center aspect-[2/3] overflow-hidden rounded-lg bg-zinc-800">
                     <IoPerson size={120} color="#a8a8a8" />
                   </div>
                 )}

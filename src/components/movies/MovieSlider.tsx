@@ -17,11 +17,11 @@ interface MovieSliderProps {
 
 const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
   return (
-    <div className="mb-8">
-      <h2 className="mb-4">{title}</h2>
+    <div className="mb-4 md:mb-8">
+      <h2 className="mb-2 md:mb-4">{title}</h2>
       <Swiper
         modules={[Navigation, FreeMode]}
-        spaceBetween={15}
+        spaceBetween={12}
         navigation
         speed={800}
         grabCursor={true}
@@ -48,7 +48,7 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ title, movies }) => {
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Link to={`/movie/${movie.id}`}>
-              <div className=" group w-full rounded-xl overflow-hidden cursor-pointer ">
+              <div className=" group w-full rounded-lg overflow-hidden cursor-pointer ">
                 <img
                   className="aspect-[2/3] object-cover bg-zinc-800 poster-hover"
                   src={
