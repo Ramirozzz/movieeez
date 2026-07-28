@@ -10,7 +10,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch, reset }) => {
   return (
     <div className="relative w-full max-w-xl">
-      <div className="flex items-center backdrop-blur-md border border-white/15 rounded-full px-4 py-4 shadow-lg">
+      <div className="flex items-center backdrop-blur-md border border-white/15 rounded-full px-4 py-3 shadow-lg">
         <div className="pr-3">
           <FiSearch size={28} color="var(--color-muted)" />
         </div>

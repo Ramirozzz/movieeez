@@ -18,7 +18,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchResults }) => {
                   : placeholder
               }
               alt={movie.title}
-              className="rounded-xl poster-hover cursor-pointer"
+              className="rounded-lg poster-hover cursor-pointer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/30 via-bg/5 to-bg/10 transition-opacity duration-300 group-hover:opacity-0" />
           </Link>
