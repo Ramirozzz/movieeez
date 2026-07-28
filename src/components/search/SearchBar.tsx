@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 
@@ -8,6 +9,21 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch, reset }) => {
+  const [search, setSearch] = useState(value);
+
+  // Debounce search
+  useEffect(() => {
+    setSearch(value);
+  }, [value]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onSearch(search);
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [search, onSearch]);
+
   return (
     <div className="relative w-full max-w-xl">
       <div className="flex items-center backdrop-blur-md border border-white/15 rounded-full px-4 py-3 shadow-lg">
@@ -21,8 +37,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch, reset }) => {
           type="text"
           placeholder="Search for movies..."
           className="bg-transparent outline-none text-font placeholder-muted w-full"
-          onChange={(e) => onSearch(e.target.value)}
-          value={value}
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
         />
       </div>
     </div>
