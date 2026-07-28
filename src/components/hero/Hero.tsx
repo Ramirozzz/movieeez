@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
             : randomMovie.overview}
         </p>
 
-        <div className="flex gap-5">
+        <div className="flex gap-4 md:gap-5">
           <Link to={`/movie/${randomMovie.id}`}>
             <MoreInfo />
           </Link>
