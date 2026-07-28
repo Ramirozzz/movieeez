@@ -10,6 +10,7 @@ interface ActorInfoProps {
 const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
   const [textExpanded, setTextExpanded] = useState(false);
 
+  // Truncate long text
   const isLong = actorDetails.biography.length > 500;
 
   return (

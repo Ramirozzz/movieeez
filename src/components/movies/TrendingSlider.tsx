@@ -7,9 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
 import { Navigation } from "swiper/modules";
-// import { useTrending } from "../../hooks/useTrending";
-// import { useSearchParams } from "react-router-dom";
-// import type { TrendingTime } from "../../types/tmdbApi.types";
 import "../movies/movieSlider.css";
 
 interface MoviesSliderProps {

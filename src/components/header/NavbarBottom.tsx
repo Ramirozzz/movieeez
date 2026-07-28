@@ -1,6 +1,4 @@
 import { NavLink } from "react-router-dom";
-// import { MdHome } from "react-icons/md";
-// import { IoIosPlay } from "react-icons/io";
 import { NAV_LINKS } from "../../constants/navLinks";
 import { FiSearch } from "react-icons/fi";
 

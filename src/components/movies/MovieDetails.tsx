@@ -33,7 +33,6 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
       (video) => video.site === "YouTube" && video.type === "Trailer",
     );
 
-  console.log(watchlist);
   return (
     <section className="relative min-h-150 lg:min-h-170 bg-cover bg-center flex flex-col justify-center">
       <picture className="absolute inset-0">

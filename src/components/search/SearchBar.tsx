@@ -11,7 +11,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch, reset }) => {
   const [search, setSearch] = useState(value);
 
-  // Debounce search
+  // Prevent API calls on every letter typed
   useEffect(() => {
     setSearch(value);
   }, [value]);

@@ -10,6 +10,7 @@ const HomePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const time = (searchParams.get("time") as TrendingTime) || "day";
 
+  //Update title based on selected trending time
   const trendingTitle =
     time === "day" ? "Trending today" : "Trending this week";
 

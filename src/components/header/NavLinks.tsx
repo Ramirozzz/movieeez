@@ -12,10 +12,10 @@ const NavLinks = () => {
             <NavLink
               to={link.to}
               className={({ isActive }) =>
-                `flex items-center gap-2 text-sm  transition-all duration-300 ${
+                `flex items-center gap-2 text-sm transition-all duration-300 ${
                   isActive
                     ? "text-font font-semibold bg-white/15 px-4 py-2 rounded-full"
-                    : "text-muted/80 px-4 py-2 hover:text-font hover:bg-white/15 rounded-full"
+                    : "text-muted px-4 py-2 hover:text-font hover:bg-white/15 rounded-full"
                 }`
               }
             >
