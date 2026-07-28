@@ -6,5 +6,6 @@ export const useRelatedMovies = (id: number) => {
   return useQuery<MoviesResponse>({
     queryKey: ["related movies", { id }],
     queryFn: () => getRelatedMovies(id),
+    staleTime: 1000 * 60 * 10,
   });
 };

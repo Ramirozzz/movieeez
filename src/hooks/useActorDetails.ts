@@ -6,5 +6,6 @@ export const useGetActorDetails = (id: number) => {
   return useQuery<ActorDetails>({
     queryKey: ["actor details", { id }],
     queryFn: () => getActorDetails(id),
+    staleTime: 1000 * 60 * 60,
   });
 };

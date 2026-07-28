@@ -6,5 +6,6 @@ export const useActorMovies = (id: number) => {
   return useQuery<ActorMoviesResponse>({
     queryKey: ["actor movies", { id }],
     queryFn: () => getActorMovies(id),
+    staleTime: 1000 * 60 * 60 * 24,
   });
 };

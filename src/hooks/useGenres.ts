@@ -6,5 +6,6 @@ export const useGenres = () => {
   return useQuery<GenresResponse>({
     queryKey: ["genres"],
     queryFn: getGenres,
+    staleTime: 1000 * 60 * 60 * 24,
   });
 };

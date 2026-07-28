@@ -6,5 +6,6 @@ export const useTopRatedMovies = () => {
   return useQuery<MoviesResponse>({
     queryKey: ["top rated movies"],
     queryFn: getTopRatedMovies,
+    staleTime: 1000 * 60 * 10,
   });
 };
