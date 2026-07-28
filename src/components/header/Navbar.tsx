@@ -20,8 +20,8 @@ const Navbar = () => {
           >
             Movieeez
           </Link>
-          <div className="text-accent pb-0.5">
-            <FaPlay className="text-xl" />
+          <div className="text-accent pb-1">
+            <FaPlay className="text-lg md:text-xl" />
           </div>
         </div>
         {/* Navbar links*/}
