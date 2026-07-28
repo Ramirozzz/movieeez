@@ -33,10 +33,7 @@ const Navbar = () => {
               isActive ? "text-accent" : "text-font"
             }
           >
-            <FiSearch
-              size={26}
-              className="hover:text-accent transition-all duration-300"
-            />
+            <FiSearch size={26} className=" transition-all duration-300" />
           </NavLink>
 
           {dark ? (
