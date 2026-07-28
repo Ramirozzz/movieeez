@@ -57,6 +57,7 @@ const ActorSlider: React.FC<ActorSliderProps> = ({ title, actors }) => {
                     <IoPerson size={120} color="#a8a8a8" />
                   </div>
                 )}
+                <div className="pointer-events-none absolute inset-0 bg-bg/10 transition-opacity duration-300 group-hover:opacity-0" />
               </div>
 
               <div className="text-center text-sm mt-2 cursor-pointer ">

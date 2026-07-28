@@ -9,7 +9,10 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
   return (
     <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-x-2 md:gap-x-4 gap-y-4 md:gap-y-8 mt-10">
       {movies.map((movie) => (
-        <div key={movie.id} className="group overflow-hidden w-full rounded-xl">
+        <div
+          key={movie.id}
+          className="group relative overflow-hidden w-full rounded-xl fade-in"
+        >
           <Link to={`/movie/${movie.id}`}>
             <img
               src={
@@ -20,6 +23,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
               alt={movie.title}
               className="poster-hover"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/30 via-bg/5 to-bg/10 transition-opacity duration-300 group-hover:opacity-0" />
           </Link>
         </div>
       ))}

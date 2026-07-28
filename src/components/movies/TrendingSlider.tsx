@@ -94,6 +94,7 @@ const TrendingSlider: React.FC<MoviesSliderProps> = ({
                   alt={movie.title}
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/30 via-bg/5 to-bg/10 transition-opacity duration-300 group-hover:opacity-0" />
               </div>
             </Link>
           </SwiperSlide>
