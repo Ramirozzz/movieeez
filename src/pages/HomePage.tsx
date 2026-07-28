@@ -42,17 +42,17 @@ const HomePage = () => {
           <>
             <Hero movies={allMovies} />
 
-            <div className="mt-8 pl-4 lg:pl-16">
-              <MovieSlider
-                title="Now Playing"
-                movies={nowPlayingMovies.results}
-              />
-
+            <div className="py-8 pl-4 lg:pl-16">
               <TrendingSlider
                 title={trendingTitle}
                 movies={trendingMovies.results}
                 time={time}
                 onSwitch={setTime}
+              />
+
+              <MovieSlider
+                title="Now Playing"
+                movies={nowPlayingMovies.results}
               />
 
               <MovieSlider title="Top Rated" movies={topRatedMovies.results} />
