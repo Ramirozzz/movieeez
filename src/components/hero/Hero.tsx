@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { MoviesResponse } from "../../types/tmdbApi.types";
-import MoreInfo from "../buttons/MoreInfo";
+import Button from "../buttons/Button";
 import AddToWatchlist from "../buttons/AddToWatchlist";
 
 interface HeroProps {
@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
 
         <div className="flex gap-4 md:gap-5">
           <Link to={`/movie/${randomMovie.id}`}>
-            <MoreInfo />
+            <Button title={"More info"} />
           </Link>
           <AddToWatchlist movie={randomMovie} />
         </div>
