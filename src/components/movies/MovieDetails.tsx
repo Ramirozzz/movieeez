@@ -2,7 +2,6 @@ import { useState } from "react";
 import type { Movie } from "../../types/tmdbApi.types";
 import PlayButton from "../buttons/PlayButton";
 import TrailerModal from "../trailerModal/TrailerModal";
-import { useWatchlist } from "../../hooks/useWatchList";
 import AddToWatchlist from "../buttons/AddToWatchlist";
 
 interface MovieDetailsProps {
@@ -11,8 +10,6 @@ interface MovieDetailsProps {
 
 const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
-
-  const { watchlist } = useWatchlist();
 
   //Convert relaease date to year
   const getYear = (date: string | null) => {
