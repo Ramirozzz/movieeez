@@ -18,12 +18,12 @@ const NavbarBottom = () => {
               className={({ isActive }) =>
                 `flex flex-col items-center gap-1 ${
                   isActive
-                    ? "font-bold text-font"
+                    ? "font-bold text-accent"
                     : "text-muted hover:text-font"
                 }`
               }
             >
-              <Icon size={19} />
+              <Icon size={22} />
               <span className="text-xs tracking-[0.03em] mt-0.5">
                 {link.label}
               </span>
@@ -34,12 +34,12 @@ const NavbarBottom = () => {
           <NavLink
             to={"search"}
             className={({ isActive }) =>
-              isActive ? "text-font  font-bold" : "text-muted"
+              isActive ? "text-accent font-bold" : "text-muted"
             }
           >
             <div className="flex flex-col items-center gap-1 cursor-pointer group">
               <div>
-                <FiSearch size={20} />
+                <FiSearch size={22} />
               </div>
               <div className="text-xs tracking-[0.03em]">Search</div>
             </div>
