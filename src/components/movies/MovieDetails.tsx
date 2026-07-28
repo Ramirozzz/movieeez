@@ -35,7 +35,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
 
   console.log(watchlist);
   return (
-    <section className="relative min-h-130 lg:min-h-170 bg-cover bg-center flex flex-col justify-center">
+    <section className="relative min-h-150 lg:min-h-170 bg-cover bg-center flex flex-col justify-center">
       <picture className="absolute inset-0">
         <source media="(min-width: 768px)" srcSet={backdropUrl} />
 
@@ -69,8 +69,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
             </div>
           </div>
 
-          <p className="mb-10 mt-8 leading-relaxed">{movie.overview}</p>
-          <div className="flex items-center gap-6">
+          <p className="text-sm mb-10 mt-8 leading-relaxed">{movie.overview}</p>
+          <div className="flex items-center gap-4 md:gap-6">
             {trailer && <PlayButton onClick={() => setIsTrailerOpen(true)} />}
             <AddToWatchlist movie={movie} />
           </div>
