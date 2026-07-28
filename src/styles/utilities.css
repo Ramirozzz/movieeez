@@ -6,7 +6,7 @@
   }
 
   .fade-bottom {
-    @apply absolute bottom-0 left-0 w-full h-30 z-5;
+    @apply absolute bottom-0 left-0 w-full h-35 z-5;
     background: var(--fade-color);
   }
 }
