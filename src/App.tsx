@@ -4,14 +4,13 @@ import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import ActorDetailsPage from "./pages/ActorDetailsPage";
-// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import GlobalFetching from "./components/Loading/GlobalFetching";
 import MoviesByGenrePage from "./pages/MoviesByGenrePage";
 import SearchPage from "./pages/SearchPage";
-import { useTheme } from "./hooks/useTheme";
-
-import "./App.css";
 import WatchlistPage from "./pages/WatchlistPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import { useTheme } from "./hooks/useTheme";
+import "./App.css";
 
 function App() {
   const { dark } = useTheme();
@@ -37,8 +36,8 @@ function App() {
           <Route path="/Search" element={<SearchPage />} />
           <Route path="/watchlist" element={<WatchlistPage />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      {/* <ReactQueryDevtools /> */}
     </>
   );
 }
