@@ -15,13 +15,13 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-1">
           <Link
-            className=" text-2xl lg:text-3xl text-font font-primary "
+            className="text-[1.65rem] md:text-3xl text-font font-primary "
             to="/"
           >
             Movieeez
           </Link>
           <div className="text-accent pb-0.5">
-            <FaPlay size={20} />
+            <FaPlay className="text-xl" />
           </div>
         </div>
         {/* Navbar links*/}
