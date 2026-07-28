@@ -13,7 +13,7 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
   const isLong = actorDetails.biography.length > 500;
 
   return (
-    <section className="flex flex-col lg:flex-row items-start lg:items-center justify-center gap-8 lg:gap-16 p-4 md:p-8 lg:p-13">
+    <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center gap-8 lg:gap-16 p-4 md:p-8 lg:p-13">
       <div className="relative hidden lg:block">
         <img
           className="w-full h-auto rounded-xl object-cover "
@@ -79,7 +79,7 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
 
           <div className="max-w-4xl  ">
             {actorDetails.biography ? (
-              <p className="text-base leading-7">
+              <p className="text-sm leading-7">
                 {textExpanded || !isLong
                   ? actorDetails.biography
                   : `${actorDetails.biography.slice(0, 500)}...`}{" "}
@@ -99,7 +99,7 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

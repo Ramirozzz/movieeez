@@ -32,7 +32,7 @@ const ActorDetailsPage = () => {
   return (
     <QueryWrapper isLoading={isLoading} isError={isError} error={error}>
       {actorDetails && actorMovies && (
-        <section className="min-h-screen py-20 ">
+        <section className="min-h-screen md:py-20 pt-25 md:pt-0 ">
           <ActorInfo actorDetails={actorDetails} />
 
           <div className="pl-4 md:pl-8 lg:pl-13 py-5 mt-8 ">
