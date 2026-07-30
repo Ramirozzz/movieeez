@@ -65,7 +65,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
             </div>
           </div>
 
-          <p className="text-sm mb-10 mt-8 leading-relaxed">{movie.overview}</p>
+          <p className="mb-10 mt-6 leading-relaxed">{movie.overview}</p>
           <div className="flex items-center gap-4 md:gap-6">
             {trailer && <PlayButton onClick={() => setIsTrailerOpen(true)} />}
             <AddToWatchlist movie={movie} />
