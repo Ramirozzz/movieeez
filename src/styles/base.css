@@ -16,7 +16,7 @@
   }
 
   h1 {
-    font-size: clamp(3.5rem, 8vw, 5rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     font-weight: normal;
     line-height: 1;
   }
