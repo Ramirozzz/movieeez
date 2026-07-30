@@ -18,18 +18,41 @@
   --img-overlay:
     linear-gradient(
       90deg,
-      rgba(8, 8, 12, 0.95) 0%,
-      rgba(8, 8, 12, 0.85) 15%,
-      rgba(8, 8, 12, 0.75) 35%,
-      rgba(8, 8, 12, 0.45) 55%,
-      transparent 80%
+      #090909 0%,
+      #090909 18%,
+      rgba(9, 9, 9, 1) 37%,
+      rgba(9, 9, 9, 0.96) 43%,
+      rgba(9, 9, 9, 0.75) 60%,
+      rgba(9, 9, 9, 0.25) 70%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 30% 50%,
+      rgba(9, 9, 9, 0.45) 0%,
+      rgba(9, 9, 9, 0.15) 45%,
+      transparent 75%
     ),
     linear-gradient(
       180deg,
-      rgba(8, 8, 12, 0.9) 0%,
-      transparent 25%,
-      transparent 70%,
-      rgba(8, 8, 12, 0.95) 100%
+      rgba(9, 9, 9, 0.75) 0%,
+      transparent 22%,
+      transparent 78%,
+      #090909 100%
+    );
+
+  --img-overlay-mobile:
+    linear-gradient(
+      180deg,
+      rgba(9, 9, 9, 0.88) 0%,
+      rgba(9, 9, 9, 0.5) 25%,
+      rgba(9, 9, 9, 0.45) 45%,
+      rgba(9, 9, 9, 0.85) 70%
+    ),
+    radial-gradient(
+      circle at center,
+      rgba(9, 9, 9, 0.15) 0%,
+      rgba(9, 9, 9, 0.25) 55%,
+      rgba(9, 9, 9, 0.8) 100%
     );
 
   --fade-color: linear-gradient(to bottom, transparent, #090909);
@@ -40,23 +63,46 @@
 
 .navy {
   --color-bg: #111827;
-  --color-accent: #60a5fa;
+  --color-accent: #53bcc4;
   --fade-color: linear-gradient(to bottom, transparent, #111827);
 
   --img-overlay:
     linear-gradient(
       90deg,
-      rgba(17, 24, 39, 0.95) 0%,
-      rgba(17, 24, 39, 0.85) 18%,
-      rgba(17, 24, 39, 0.72) 38%,
-      rgba(17, 24, 39, 0.42) 58%,
+      #111827 0%,
+      #111827 18%,
+      rgba(17, 24, 39, 1) 35%,
+      rgba(17, 24, 39, 0.85) 43%,
+      rgba(17, 24, 39, 0.6) 55%,
+      rgba(17, 24, 39, 0.15) 68%,
       transparent 82%
+    ),
+    radial-gradient(
+      circle at 25% 50%,
+      rgba(17, 24, 39, 0.45) 0%,
+      rgba(17, 24, 39, 0.15) 45%,
+      transparent 75%
     ),
     linear-gradient(
       180deg,
-      rgba(17, 24, 39, 0.92) 0%,
+      rgba(17, 24, 39, 0.75) 0%,
       transparent 22%,
-      transparent 68%,
-      rgba(17, 24, 39, 1) 100%
+      transparent 78%,
+      #111827 100%
+    );
+
+  --img-overlay-mobile:
+    linear-gradient(
+      180deg,
+      rgba(17, 24, 39, 0.8) 0%,
+      rgba(17, 24, 39, 0.25) 25%,
+      rgba(17, 24, 39, 0.4) 55%,
+      rgba(17, 24, 39, 0.8) 70%
+    ),
+    radial-gradient(
+      circle at center,
+      rgba(17, 24, 39, 0.1) 0%,
+      rgba(17, 24, 39, 0.35) 55%,
+      rgba(17, 24, 39, 0.8) 100%
     );
 }

@@ -28,10 +28,10 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
   if (!randomMovie) return null;
 
   return (
-    <section className="relative h-[720px] md:h-screen max-h-screen overflow-hidden px-4 md:px-8 lg:px-16">
+    <section className="relative h-[720px] overflow-hidden md:h-screen">
       {/* Background image */}
-      <picture className="absolute inset-0">
-        <source media="(min-width: 768px)" srcSet={backdropUrl} />
+      <picture className="absolute inset-y-0 right-0 h-full w-full lg:w-[70%]">
+        <source media="(min-width:768px)" srcSet={backdropUrl} />
 
         <img
           src={posterUrl}
@@ -41,24 +41,25 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
       </picture>
 
       {/* Overlay */}
-      <div className="hero-overlay absolute inset-0" />
+      <div className="absolute inset-0 hero-overlay" />
 
-      <div className="relative z-10 flex h-full flex-col justify-center pb-5 md:pb-0 lg:pt-15">
-        <h1 className="mb-4 md:mb-6 max-w-sm md:max-w-2xl">
-          {randomMovie.title}
-        </h1>
+      <div className="relative z-10 flex h-full max-w-7xl items-center px-4 md:px-8 lg:px-30 pt-5 lg:pt-15">
+        <div className="max-w-sm md:max-w-lg lg:max-w-xl">
+          <h1 className="mb-5">{randomMovie.title}</h1>
 
-        <p className="mb-10 max-w-sm md:max-w-xl ">
-          {(randomMovie.overview ?? "").length > 120
-            ? randomMovie.overview!.substring(0, 120) + "..."
-            : randomMovie.overview}
-        </p>
+          <p className="mb-10 md:max-w-lg leading-relaxed">
+            {(randomMovie.overview ?? "").length > 140
+              ? randomMovie.overview!.substring(0, 140) + "..."
+              : randomMovie.overview}
+          </p>
 
-        <div className="flex gap-4 md:gap-5">
-          <Link to={`/movie/${randomMovie.id}`}>
-            <Button title={"More info"} />
-          </Link>
-          <AddToWatchlist movie={randomMovie} />
+          <div className="flex flex-wrap gap-4">
+            <Link to={`/movie/${randomMovie.id}`}>
+              <Button title="More info" />
+            </Link>
+
+            <AddToWatchlist movie={randomMovie} />
+          </div>
         </div>
       </div>
 
