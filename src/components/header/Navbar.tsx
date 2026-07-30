@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 z-30 w-full">
-      <div className="relative flex items-center justify-between py-6 px-4 md:px-8 lg:px-16">
+      <div className="relative flex items-center justify-between py-4 md:py-6 px-4 md:px-8 lg:px-16">
         {/* Logo */}
         <div className="flex items-center gap-1">
           <Link
@@ -26,20 +26,22 @@ const Navbar = () => {
         </div>
         {/* Navbar links*/}
         <NavLinks />
-        <div className="flex gap-4 md:gap-5">
+        <div className="flex gap-3 md:gap-4">
           <NavLink
             to="/search"
             className={({ isActive }) =>
               isActive ? "text-accent" : "text-font"
             }
           >
-            <FiSearch size={26} className=" transition-all duration-300" />
+            <div className="bg-white/15 p-2 rounded-full">
+              <FiSearch size={16} className=" transition-all duration-300" />
+            </div>
           </NavLink>
 
           {dark ? (
             <IoInvertMode
               className="text-accent cursor-pointer"
-              size={26}
+              size={31}
               onClick={() => {
                 changeTheme();
               }}
@@ -47,7 +49,7 @@ const Navbar = () => {
           ) : (
             <IoInvertModeOutline
               className="text-accent cursor-pointer"
-              size={26}
+              size={31}
               onClick={() => {
                 changeTheme();
               }}
