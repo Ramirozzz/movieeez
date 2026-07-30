@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
@@ -7,10 +8,29 @@ import { useTheme } from "../../hooks/useTheme";
 import NavLinks from "./NavLinks";
 
 const Navbar = () => {
+  const [navbarScrolled, setNavBarScrolled] = useState(false);
   const { dark, changeTheme } = useTheme();
 
+  // handle navbar background on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setNavBarScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed top-0 z-30 w-full">
+    <nav
+      className={`fixed top-0 z-30 w-full ${
+        navbarScrolled
+          ? "bg-bg/90 backdrop-blur-md shadow-lg "
+          : "bg-transparent "
+      }`}
+    >
       <div className="relative flex items-center justify-between py-4 md:py-6 px-4 md:px-8 lg:px-16">
         {/* Logo */}
         <div className="flex items-center gap-1">
