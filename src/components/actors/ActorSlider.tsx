@@ -19,25 +19,40 @@ const ActorSlider: React.FC<ActorSliderProps> = ({ title, actors }) => {
       <h2 className="mb-4">{title}</h2>
       <Swiper
         modules={[Navigation, FreeMode]}
-        spaceBetween={12}
         navigation
-        speed={800}
         grabCursor={true}
+        freeMode={{
+          enabled: true,
+          momentum: true,
+          momentumRatio: 1.35,
+          momentumVelocityRatio: 1.2,
+          momentumBounce: false,
+          sticky: false,
+          minimumVelocity: 0.02,
+        }}
+        touchRatio={1.2}
+        resistance
+        resistanceRatio={0.8}
+        followFinger={true}
+        speed={600}
         breakpoints={{
           320: {
             // Mobile
             slidesPerView: 3.7,
             slidesPerGroup: 3,
+            spaceBetween: 10,
           },
           640: {
             // tablets
             slidesPerView: 5.5,
             slidesPerGroup: 5,
+            spaceBetween: 12,
           },
           1024: {
             // Desktop
             slidesPerView: 8.7,
             slidesPerGroup: 7,
+            spaceBetween: 15,
           },
         }}
       >

@@ -23,12 +23,24 @@ const GenresSlider: React.FC<GenresSliderProps> = ({
         modules={[Navigation, FreeMode]}
         spaceBetween={12}
         navigation
-        speed={800}
+        speed={600}
         grabCursor={true}
+        freeMode={{
+          enabled: true,
+          momentum: true,
+          momentumRatio: 1.35,
+          momentumVelocityRatio: 1.15,
+          momentumBounce: false,
+          sticky: false,
+          minimumVelocity: 0.02,
+        }}
+        touchRatio={1.2}
+        resistance
+        resistanceRatio={0.8}
         breakpoints={{
           320: {
             // Mobile
-            slidesPerView: 3.7,
+            slidesPerView: 3.3,
             slidesPerGroup: 3,
           },
           640: {
