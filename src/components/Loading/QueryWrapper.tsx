@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
@@ -14,7 +15,21 @@ const QueryWrapper = ({
   error,
   children,
 }: QueryWrapperProps) => {
-  if (isLoading) return <LoadingSpinner />;
+  const [showLoading, setShowLoading] = useState(isLoading);
+  useEffect(() => {
+    if (isLoading) {
+      setShowLoading(true);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setShowLoading(false);
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [isLoading]);
+
+  if (showLoading) return <LoadingSpinner />;
 
   if (isError) {
     return <p>Something went wrong: {error?.message}</p>;
