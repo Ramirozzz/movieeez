@@ -25,13 +25,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-30 w-full ${
+      className={`fixed top-0 z-30 w-full py-6 px-4 md:px-8 lg:px-16 ${
         navbarScrolled
-          ? "bg-bg/90 backdrop-blur-md shadow-lg "
+          ? "bg-bg/90 backdrop-blur-md shadow-lg !py-4  "
           : "bg-transparent "
       }`}
     >
-      <div className="relative flex items-center justify-between py-4 md:py-6 px-4 md:px-8 lg:px-16">
+      <div className="relative flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-1">
           <Link
@@ -54,14 +54,14 @@ const Navbar = () => {
             }
           >
             <div className="bg-white/15 p-2 rounded-full">
-              <FiSearch size={16} className=" transition-all duration-300" />
+              <FiSearch size={15} className=" transition-all duration-300" />
             </div>
           </NavLink>
 
           {dark ? (
             <IoInvertMode
               className="text-accent cursor-pointer"
-              size={31}
+              size={30}
               onClick={() => {
                 changeTheme();
               }}
@@ -69,7 +69,7 @@ const Navbar = () => {
           ) : (
             <IoInvertModeOutline
               className="text-accent cursor-pointer"
-              size={31}
+              size={30}
               onClick={() => {
                 changeTheme();
               }}
