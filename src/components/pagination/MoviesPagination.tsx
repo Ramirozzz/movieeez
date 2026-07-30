@@ -20,21 +20,23 @@ const MoviesPagination: React.FC<MoviesPaginationProps> = ({
   return (
     <div className="flex justify-center gap-4 my-15">
       <button
+        aria-label="Previous page"
         className="flex items-center gap-2 text-sm text-font font-bold bg-white/15 px-3 py-2.5 rounded-md disabled:opacity-40 disabled:pointer-events-none"
         disabled={!hasPrevPage}
         onClick={onPrevPage}
       >
-        <IoIosArrowBack />
+        <IoIosArrowBack aria-hidden="true" />
       </button>
       <span className="text-base text-font flex items-center">
         {page} / {totalPages}
       </span>
       <button
+        aria-label="Next page"
         className="flex items-center gap-2 text-sm text-font font-bold bg-white/15 px-3 py-2.5 rounded-md disabled:opacity-40 disabled:pointer-events-none"
         disabled={!hasNextPage}
         onClick={onNextPage}
       >
-        <IoIosArrowForward />
+        <IoIosArrowForward aria-hidden="true" />
       </button>
     </div>
   );
