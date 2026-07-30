@@ -21,7 +21,7 @@ const NavbarBottom = () => {
                 }`
               }
             >
-              <Icon size={22} />
+              <Icon aria-hidden="true" size={22} />
               <span className="text-xs tracking-[0.03em] mt-0.5">
                 {link.label}
               </span>
@@ -37,7 +37,7 @@ const NavbarBottom = () => {
           >
             <div className="flex flex-col items-center gap-1 cursor-pointer group">
               <div>
-                <FiSearch size={22} />
+                <FiSearch aria-hidden="true" size={22} />
               </div>
               <div className="text-xs tracking-[0.03em]">Search</div>
             </div>

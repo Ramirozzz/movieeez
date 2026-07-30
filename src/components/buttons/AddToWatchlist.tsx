@@ -18,6 +18,7 @@ const AddToWatchlist: React.FC<AddToWatchlistProps> = ({ movie }) => {
         onClick={() =>
           isSaved ? removeFromWatchlist(movie.id) : addToWatchlist(movie)
         }
+        aria-label={`Add ${movie.title} to watchlist`}
       >
         {isSaved ? <FaCheck size={22} /> : <FiPlus size={22} />}
       </button>

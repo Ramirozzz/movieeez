@@ -49,12 +49,15 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
 
           <p className="mb-10 md:max-w-lg leading-relaxed">
             {(randomMovie.overview ?? "").length > 140
-              ? randomMovie.overview!.substring(0, 140) + "..."
+              ? randomMovie.overview.substring(0, 140) + "..."
               : randomMovie.overview}
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Link to={`/movie/${randomMovie.id}`}>
+            <Link
+              to={`/movie/${randomMovie.id}`}
+              aria-label={`View details for ${randomMovie.title}`}
+            >
               <Button title="More info" />
             </Link>
 
