@@ -31,10 +31,6 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
 
       <div className="lg:px-5 py-4 lg:py-6 w-full lg:w-4xl">
         <div className="leading-relaxed">
-          <div className="inline-flex items-center gap-1.5 mb-3 px-2.5 py-1 rounded-md border border-accent/30 bg-accent/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="text-xs uppercase text-accent">Actor</span>
-          </div>
           <div className="flex justify-start items-center gap-8 md:gap-8 py-4">
             <div className="block lg:hidden w-28 h-28">
               <img
@@ -92,7 +88,7 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
             {isLong && (
               <button
                 onClick={() => setTextExpanded(!textExpanded)}
-                className="text-accent text-sm font-semibold mt-3 hover:underline"
+                className="text-accent text-xs font-semibold mt-3 hover:underline"
               >
                 {textExpanded ? "show less" : "show more"}
               </button>
