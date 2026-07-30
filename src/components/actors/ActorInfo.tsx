@@ -35,7 +35,11 @@ const ActorInfo: React.FC<ActorInfoProps> = ({ actorDetails }) => {
             <div className="block lg:hidden w-28 h-28">
               <img
                 className="w-full h-full rounded-full object-cover"
-                src={`https://image.tmdb.org/t/p/w300${actorDetails.profile_path}`}
+                src={
+                  actorDetails.profile_path
+                    ? `https://image.tmdb.org/t/p/w300${actorDetails.profile_path}`
+                    : placeholder
+                }
                 alt={actorDetails.name}
               />
             </div>
