@@ -4,7 +4,7 @@ A movie discovery app built with React and TypeScript, using the TMDB API to exp
 
 ## 🌐 Live Demo
 
-[**Visit RB Eyewear ↗**](https://movieeeez.netlify.app/)
+[**Visit Movieeez ↗**](https://movieeeez.netlify.app/)
 
 ## ✨ Features
 
