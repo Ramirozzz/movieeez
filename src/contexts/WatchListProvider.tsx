@@ -3,7 +3,11 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 import type { Movie } from "./../types/tmdbApi.types";
 
 const WatchlistProvider = ({ children }: { children: React.ReactNode }) => {
-  const [watchlist, setWatchlist] = useLocalStorage<Movie[]>("wishlist", []);
+  const [watchlist, setWatchlist] = useLocalStorage<Movie[]>(
+    "wishlist",
+    [],
+    (value): value is Movie[] => Array.isArray(value),
+  );
 
   const addToWatchlist = (movie: Movie) => {
     setWatchlist([...watchlist, movie]);
