@@ -1,32 +1,24 @@
-# React + TypeScript + Vite
+# Movieeez
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A movie discovery app built with React and TypeScript, using the TMDB API to explore movies and discover new releases.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[**Visit Movieeez ↗**](https://movieeeez.netlify.app/)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Search for movies by title.
+- Explore movies by genre.
+- Discover popular trending and upcoming movies.
+- Watch movie trailers.
+- View detailed movie information.
+- Save favorite movies to a personal watchlist.
+- Responsive design for different screen sizes.
+- Color themes.
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Frontend:** React, TypeScript, Vite, Tailwind CSS.
+- **Libraries:** TanStack Query, React Router, Axios, TMDB API.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
