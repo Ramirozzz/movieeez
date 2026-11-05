@@ -43,7 +43,7 @@ const SearchPage = () => {
 
   return (
     <section className="min-h-screen p-4 lg:px-15 ">
-      <div className="flex justify-center pt-30 ">
+      <div className="flex justify-center pt-25 ">
         <SearchBar
           value={query}
           onSearch={handleSearch}
