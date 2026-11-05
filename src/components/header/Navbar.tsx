@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
-import { FaPlay } from "react-icons/fa";
 import { IoInvertModeOutline } from "react-icons/io5";
 import { IoInvertMode } from "react-icons/io5";
 import { useTheme } from "../../hooks/useTheme";
