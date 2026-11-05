@@ -36,22 +36,22 @@
       180deg,
       rgba(9, 9, 9, 0.75) 0%,
       transparent 22%,
-      transparent 78%,
+      transparent 85%,
       #090909 100%
     );
 
   --img-overlay-mobile:
     linear-gradient(
       180deg,
-      rgba(9, 9, 9, 0.88) 0%,
-      rgba(9, 9, 9, 0.5) 25%,
-      rgba(9, 9, 9, 0.45) 45%,
-      rgba(9, 9, 9, 0.85) 70%
+      rgba(9, 9, 9, 0.85) 0%,
+      rgba(9, 9, 9, 0.35) 25%,
+      rgba(9, 9, 9, 0.25) 45%,
+      rgba(9, 9, 9, 1) 85%
     ),
     radial-gradient(
       circle at center,
       rgba(9, 9, 9, 0.15) 0%,
-      rgba(9, 9, 9, 0.25) 55%,
+      rgba(9, 9, 9, 0.25) 90%,
       rgba(9, 9, 9, 0.8) 100%
     );
 
@@ -72,7 +72,7 @@
       #111827 0%,
       #111827 18%,
       rgba(17, 24, 39, 1) 35%,
-      rgba(17, 24, 39, 0.85) 43%,
+      rgba(17, 24, 39, 0.95) 43%,
       rgba(17, 24, 39, 0.6) 55%,
       rgba(17, 24, 39, 0.15) 68%,
       transparent 82%
@@ -94,15 +94,15 @@
   --img-overlay-mobile:
     linear-gradient(
       180deg,
-      rgba(17, 24, 39, 0.8) 0%,
-      rgba(17, 24, 39, 0.25) 25%,
-      rgba(17, 24, 39, 0.4) 55%,
-      rgba(17, 24, 39, 0.8) 70%
+      rgba(17, 24, 39, 0.85) 0%,
+      rgba(17, 24, 39, 0.3) 25%,
+      rgba(17, 24, 39, 0.25) 55%,
+      rgba(17, 24, 39, 1) 85%
     ),
     radial-gradient(
       circle at center,
-      rgba(17, 24, 39, 0.1) 0%,
-      rgba(17, 24, 39, 0.35) 55%,
+      rgba(17, 24, 39, 0.15) 0%,
+      rgba(17, 24, 39, 0.25) 90%,
       rgba(17, 24, 39, 0.8) 100%
     );
 }
