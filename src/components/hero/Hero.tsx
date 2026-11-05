@@ -48,8 +48,8 @@ const Hero: React.FC<HeroProps> = ({ movies }) => {
           <h1 className="mb-5">{randomMovie.title}</h1>
 
           <p className="mb-10 md:max-w-lg leading-relaxed">
-            {(randomMovie.overview ?? "").length > 140
-              ? randomMovie.overview.substring(0, 140) + "..."
+            {(randomMovie.overview ?? "").length > 90
+              ? randomMovie.overview.substring(0, 90) + "..."
               : randomMovie.overview}
           </p>
 
