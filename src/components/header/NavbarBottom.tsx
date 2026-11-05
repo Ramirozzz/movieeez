@@ -5,7 +5,7 @@ import { FiSearch } from "react-icons/fi";
 const NavbarBottom = () => {
   return (
     <nav className=" fixed bottom-0 z-30 w-full bg-bg border-t border-white/10 lg:hidden">
-      <div className="flex items-center justify-around px-2 py-3">
+      <div className="flex items-center justify-around px-2 py-4">
         {NAV_LINKS.map((link) => {
           const Icon = link.icon;
 

@@ -32,19 +32,13 @@ const Navbar = () => {
       }`}
     >
       <div className="relative flex items-center justify-between">
-        {/* Logo */}
         <Link
-          className="text-[1.65rem] md:text-3xl text-font font-primary "
+          className="text-[1.75rem] md:text-3xl text-font font-primary "
           to="/"
         >
-          <div className="flex items-center gap-1">
-            Movieeez
-            <div className="text-accent pb-1">
-              <FaPlay className="text-lg md:text-xl" />
-            </div>
-          </div>
+          <div className="flex items-center gap-1">Movieeez</div>
         </Link>
-        {/* Navbar links*/}
+
         <NavLinks />
         <div className="flex gap-3 md:gap-4">
           <NavLink
@@ -54,10 +48,10 @@ const Navbar = () => {
               isActive ? "text-accent" : "text-font"
             }
           >
-            <div className="bg-white/15 p-2 rounded-full">
+            <div className="bg-white/15 p-1.5 rounded-full">
               <FiSearch
                 aria-hidden="true"
-                size={15}
+                size={18}
                 className=" transition-all duration-300"
               />
             </div>
