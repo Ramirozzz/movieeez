@@ -24,9 +24,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-30 w-full py-6 px-4 md:px-8 lg:px-16 ${
+      className={`fixed top-0 z-30 w-full py-4 md:py-6 px-4 md:px-8 lg:px-16 ${
         navbarScrolled
-          ? "bg-bg/90 backdrop-blur-md shadow-lg !py-4  "
+          ? "bg-bg/90 backdrop-blur-md shadow-lg !py-3  "
           : "bg-transparent "
       }`}
     >
